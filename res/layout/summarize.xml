@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/todoCheckedNumTextview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/todoCheckedTextview"
+        android:layout_alignBottom="@+id/todoCheckedTextview"
+        android:layout_toRightOf="@+id/todoCheckedTextview"
+        android:text="Num"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/todoUncheckNumTextview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/todoArchivedTextview"
+        android:layout_toRightOf="@+id/todoUncheckedTextview"
+        android:text="Num"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/todoArchivedNumTextview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/archivedCheckedTextview"
+        android:layout_alignLeft="@+id/todoCheckedNumTextview"
+        android:text="Num"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/archivedCheckedNumTextview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/archivedUncheckedTextview"
+        android:layout_toRightOf="@+id/archivedCheckedTextview"
+        android:text="Num"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/todoCheckedTextview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="59dp"
+        android:text="Todo Item Checked:"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/todoUncheckedTextview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/todoCheckedNumTextview"
+        android:layout_marginTop="34dp"
+        android:text="Todo Item Unchecked:"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/todoArchivedTextview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/todoUncheckedTextview"
+        android:layout_marginTop="28dp"
+        android:layout_toLeftOf="@+id/todoArchivedNumTextview"
+        android:text="Todo Item archived:"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/archivedCheckedTextview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/todoArchivedTextview"
+        android:layout_marginTop="31dp"
+        android:text="Archived Item checked:"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/archivedUncheckedTextview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/archivedCheckedTextview"
+        android:layout_marginTop="38dp"
+        android:text="Archived Item unchecked:"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/archivedUncheckedNumTextview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/archivedUncheckedTextview"
+        android:layout_alignBottom="@+id/archivedUncheckedTextview"
+        android:layout_toRightOf="@+id/archivedUncheckedTextview"
+        android:text="Num"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+</RelativeLayout>
