@@ -22,6 +22,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="ca.ualberta.cs.todolist.AddNewItemActivity"
+            android:label="@string/title_activity_add_new_item" >
+        </activity>
+        <activity
+            android:name="ca.ualberta.cs.todolist.ViewArchivedActivity"
+            android:label="@string/title_activity_view_archived" >
+        </activity>
+        <activity
+            android:name="ca.ualberta.cs.todolist.SummarizedDataActivity"
+            android:label="@string/title_activity_summarized_data" >
+        </activity>
     </application>
 
 </manifest>

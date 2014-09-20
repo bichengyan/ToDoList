@@ -4,5 +4,8 @@
     <string name="app_name">ToDoList</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    <string name="title_activity_add_new_item">AddNewItemActivity</string>
+    <string name="title_activity_view_archived">ViewArchivedActivity</string>
+    <string name="title_activity_summarized_data">SummarizedDataActivity</string>
 
 </resources>

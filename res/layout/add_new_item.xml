@@ -19,6 +19,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@+id/addNewItemBotton"
         android:ems="10" />
 
     <Button
@@ -27,7 +28,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_toRightOf="@+id/newItemEditText"
         android:text="Add" />
 
 </RelativeLayout>

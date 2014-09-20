@@ -8,32 +8,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity" >
 
-    <Button
-        android:id="@+id/emailItemButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="16dp"
-        android:text="Email" />
-
-    <Button
-        android:id="@+id/archiveItemButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:text="archive" />
-
-    <Button
-        android:id="@+id/removeItemButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="16dp"
-        android:text="remove" />
-
     <ListView
         android:id="@+id/todoItemListView"
         android:layout_width="match_parent"
@@ -44,5 +18,32 @@
         android:layout_alignParentTop="true" >
 
     </ListView>
+
+    <Button
+        android:id="@+id/emailItemButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/archiveItemButton"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@+id/archiveItemButton"
+        android:text="E-mail" />
+
+    <Button
+        android:id="@+id/removeItemButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/todoItemListView"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/archiveItemButton"
+        android:text="Remove" />
+
+    <Button
+        android:id="@+id/archiveItemButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/removeItemButton"
+        android:layout_alignBottom="@+id/removeItemButton"
+        android:layout_centerHorizontal="true"
+        android:text="Archive" />
 
 </RelativeLayout>
