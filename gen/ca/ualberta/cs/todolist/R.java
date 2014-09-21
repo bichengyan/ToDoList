@@ -24,28 +24,29 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int AddNewItem=0x7f080013;
-        public static final int action_settings=0x7f080012;
+        public static final int AddNewItem=0x7f080014;
+        public static final int action_settings=0x7f080013;
         public static final int addNewItemBotton=0x7f080006;
-        public static final int archiveItemButton=0x7f080001;
+        public static final int archiveItemButton=0x7f080002;
         public static final int archivedCheckedNumTextview=0x7f08000e;
         public static final int archivedCheckedTextview=0x7f08000d;
-        public static final int archivedItemListView=0x7f080011;
+        public static final int archivedItemListview=0x7f080012;
         public static final int archivedUncheckedNumTextview=0x7f080010;
         public static final int archivedUncheckedTextview=0x7f08000f;
-        public static final int emailItemButton=0x7f080000;
+        public static final int emailItemButton=0x7f080001;
         public static final int newItemEditText=0x7f080005;
-        public static final int removeItemButton=0x7f080002;
-        public static final int summarizeData=0x7f080015;
+        public static final int removeArchivedItemButton=0x7f080011;
+        public static final int removeItemButton=0x7f080003;
+        public static final int summarizeData=0x7f080016;
         public static final int todoArchivedNumTextview=0x7f08000c;
         public static final int todoArchivedTextview=0x7f08000a;
         public static final int todoCheckedNumTextview=0x7f080007;
         public static final int todoCheckedTextview=0x7f080008;
-        public static final int todoItemListView=0x7f080003;
+        public static final int todoItemListView=0x7f080000;
         public static final int todoItemListView2=0x7f080004;
         public static final int todoUncheckNumTextview=0x7f080009;
         public static final int todoUncheckedTextview=0x7f08000b;
-        public static final int viewArchivedItem=0x7f080014;
+        public static final int viewArchivedItem=0x7f080015;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -60,12 +61,19 @@ public final class R {
         public static final int view_archived=0x7f070003;
     }
     public static final class string {
+        public static final int Add_New_Item=0x7f05000b;
+        public static final int Summarize_Data=0x7f05000c;
         public static final int action_settings=0x7f050001;
+        public static final int add=0x7f050009;
         public static final int app_name=0x7f050000;
+        public static final int archive=0x7f050007;
+        public static final int email=0x7f050008;
         public static final int hello_world=0x7f050002;
+        public static final int remove=0x7f050006;
         public static final int title_activity_add_new_item=0x7f050003;
         public static final int title_activity_summarized_data=0x7f050005;
         public static final int title_activity_view_archived=0x7f050004;
+        public static final int view_archived_item=0x7f05000a;
     }
     public static final class style {
         /** 

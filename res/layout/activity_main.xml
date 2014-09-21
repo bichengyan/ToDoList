@@ -26,7 +26,8 @@
         android:layout_alignBottom="@+id/archiveItemButton"
         android:layout_alignParentRight="true"
         android:layout_toRightOf="@+id/archiveItemButton"
-        android:text="E-mail" />
+        android:onClick="emailItem"
+        android:text="@string/email" />
 
     <Button
         android:id="@+id/removeItemButton"
@@ -35,7 +36,8 @@
         android:layout_alignLeft="@+id/todoItemListView"
         android:layout_alignParentBottom="true"
         android:layout_toLeftOf="@+id/archiveItemButton"
-        android:text="Remove" />
+        android:onClick="removeItem"
+        android:text="@string/remove" />
 
     <Button
         android:id="@+id/archiveItemButton"
@@ -44,6 +46,7 @@
         android:layout_alignBaseline="@+id/removeItemButton"
         android:layout_alignBottom="@+id/removeItemButton"
         android:layout_centerHorizontal="true"
-        android:text="Archive" />
+        android:onClick="archiveItem"
+        android:text="@string/archive" />
 
 </RelativeLayout>

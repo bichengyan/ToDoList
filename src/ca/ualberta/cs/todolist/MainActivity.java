@@ -17,19 +17,43 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 package ca.ualberta.cs.todolist;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
-
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		
+		ListView listview = (ListView) findViewById(R.id.todoItemListView);
+		Collection<Item> items = ItemListController.getItemList().getItems();
+		final ArrayList<Item> list = new ArrayList<Item>(items);
+		final ArrayAdapter<Item> ItemAdapter;
+		ItemAdapter = new ArrayAdapter<Item>(this,android.R.layout.simple_list_item_1, list);
+		listview.setAdapter(ItemAdapter);
+		
+		//update observer
+		ItemListController.getItemList().addListener(new Listener() {		
+			@Override
+			public void update() {
+				list.clear();
+				Collection<Item> items = ItemListController.getItemList().getItems();
+				list.addAll(items);
+				ItemAdapter.notifyDataSetChanged();
+			}
+		});
 	}
 
 	@Override
@@ -55,5 +79,17 @@ public class MainActivity extends Activity {
 		Toast.makeText(this, "summarize data", Toast.LENGTH_SHORT).show();
 		Intent intent = new Intent(MainActivity.this,SummarizedDataActivity.class);
 		startActivity(intent);
+	}
+	
+	public void removeItem(View v){
+		Toast.makeText(this, "remove item", Toast.LENGTH_SHORT).show();
+	}
+	
+	public void archiveItem(View v){
+		Toast.makeText(this, "archive item", Toast.LENGTH_SHORT).show();
+	}
+	
+	public void emailItem(View v){
+		Toast.makeText(this, "email item", Toast.LENGTH_SHORT).show();
 	}
 }

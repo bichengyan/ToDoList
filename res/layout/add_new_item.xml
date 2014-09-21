@@ -20,7 +20,8 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_toLeftOf="@+id/addNewItemBotton"
-        android:ems="10" />
+        android:ems="10"
+        android:inputType="textAutoCorrect" />
 
     <Button
         android:id="@+id/addNewItemBotton"
@@ -28,6 +29,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:text="Add" />
+        android:onClick="addItemAction"
+        android:text="@string/add" />
 
 </RelativeLayout>
