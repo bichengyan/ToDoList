@@ -6,23 +6,40 @@ import java.util.Collection;
 public class ItemList {
 	
 	protected ArrayList<Item> ItemList;
+	protected ArrayList<Item> ArchivedItemList;
 	protected ArrayList<Listener> listeners;
 	
 	public ItemList() {
 		ItemList = new ArrayList<Item>();	
 		listeners = new ArrayList<Listener>();
+		ArchivedItemList = new ArrayList<Item>();
 	}
 		
 	public Collection<Item> getItems() {
 		return ItemList;	
 	}
+	
+	public Collection<Item> getArchivedItems() {
+		return ArchivedItemList;	
+	}
+	
 	public void addItem(Item testItem) {
 		ItemList.add(testItem);
 		NotifyListeners();
 	}
 	
+	public void addArchivedItem(Item testItem) {
+		ArchivedItemList.add(testItem);
+		NotifyListeners();
+	}
+	
 	public void removeItem(Item testItem) {
 		ItemList.remove(testItem);
+		NotifyListeners();
+	}
+	
+	public void removeArchivedItem(Item testItem) {
+		ArchivedItemList.remove(testItem);
 		NotifyListeners();
 	}
 	

@@ -106,6 +106,12 @@ public class MainActivity extends Activity {
 	
 	public void archiveItem(View v){
 		Toast.makeText(this, "Archiving item", Toast.LENGTH_SHORT).show();
+		ItemListController ic = new ItemListController();
+	    for (Item i : ItemAdapter.getCheckedBox()) {
+		      if (i.box){
+		    	  ic.addArchivedItem(i);
+		      }
+		}
 	}
 	
 	public void emailItem(View v){
