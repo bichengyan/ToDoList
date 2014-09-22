@@ -14,6 +14,9 @@
     <string name="view_archived_item">View Archived Item</string>
     <string name="Add_New_Item">Add New Item</string>
     <string name="Summarize_Data">Summarize Data</string>
-    <string name="finish">Finish</string>
+    <string name="check">Check</string>
+    <string name="select_all">Select All</string>
+    <string name="select_none">Select None</string>
+    <string name="select_inverse">Select Inverse </string>
 
 </resources>

@@ -51,4 +51,24 @@ public class ItemList {
 		}
 		NotifyListeners();
 	}
+
+	public void selectAll(Item testitem) {
+		testitem.box = true;
+		NotifyListeners();
+	}
+
+	public void selectNone(Item testitem) {
+		testitem.box = false;
+		NotifyListeners();
+	}
+
+	public void selectInverse(Item testitem) {
+		if(testitem.box){
+			testitem.box = false;
+		}
+		else{
+			testitem.box = true;
+		}
+		NotifyListeners();
+	}
 }

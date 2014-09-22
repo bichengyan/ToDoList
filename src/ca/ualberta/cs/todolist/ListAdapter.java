@@ -65,13 +65,30 @@ public class ListAdapter extends BaseAdapter {
 
 	ArrayList<Item> getBox() {
 		ArrayList<Item> box = new ArrayList<Item>();
-		for (Item p : objects) {
-			if (p.box)
-				box.add(p);
+		for (Item i : objects) {
+				box.add(i);
 		}
 		return box;
 	}
-
+	
+	ArrayList<Item> getCheckedBox() {
+		ArrayList<Item> box = new ArrayList<Item>();
+		for (Item i : objects) {
+			if (i.box)
+				box.add(i);
+		}
+		return box;
+	}
+	
+	ArrayList<Item> getUncheckedBox() {
+		ArrayList<Item> box = new ArrayList<Item>();
+		for (Item i : objects) {
+			if (!(i.box))
+				box.add(i);
+		}
+		return box;
+	}
+	
 	OnCheckedChangeListener myCheckChangList = new OnCheckedChangeListener() {
 		public void onCheckedChanged(CompoundButton buttonView,
 				boolean isChecked) {

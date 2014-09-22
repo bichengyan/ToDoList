@@ -84,7 +84,7 @@ public class MainActivity extends Activity {
 		ItemListController ic = new ItemListController();
 	    String result = "Selected items are :";
 	    
-	    for (Item i : ItemAdapter.getBox()) {
+	    for (Item i : ItemAdapter.getCheckedBox()) {
 	      if (i.box){
 	        result += "\n" + i.getName();
 	        ic.changeStatus(i);
@@ -95,21 +95,45 @@ public class MainActivity extends Activity {
 	}
 	
 	public void removeItem(View v){
-		Toast.makeText(this, "removing item", Toast.LENGTH_SHORT).show();
+		Toast.makeText(this, "Removing item", Toast.LENGTH_SHORT).show();
 		ItemListController ic = new ItemListController();
-	    for (Item i : ItemAdapter.getBox()) {
+	    for (Item i : ItemAdapter.getCheckedBox()) {
 		      if (i.box){
 		    	  ic.removeItem(i);
 		      }
-		    }	
+		}	
 	}
 	
 	public void archiveItem(View v){
-		Toast.makeText(this, "archive item", Toast.LENGTH_SHORT).show();
+		Toast.makeText(this, "Archiving item", Toast.LENGTH_SHORT).show();
 	}
 	
 	public void emailItem(View v){
-		Toast.makeText(this, "email item", Toast.LENGTH_SHORT).show();
+		Toast.makeText(this, "Emailing item", Toast.LENGTH_SHORT).show();
+	}
+	
+	public void selectAll(View v){
+		Toast.makeText(this, "Selected all items", Toast.LENGTH_SHORT).show();
+		ItemListController ic = new ItemListController();
+		for (Item i : ItemAdapter.getUncheckedBox()) {
+			ic.selectAll(i);
+		}
+	}
+	
+	public void selectNone(View v){
+		Toast.makeText(this, "Selected None items", Toast.LENGTH_SHORT).show();
+		ItemListController ic = new ItemListController();
+	    for (Item i : ItemAdapter.getCheckedBox()) {
+	    	ic.selectNone(i);
+		}
+	}
+	
+	public void selectInverse(View v){
+		Toast.makeText(this, "Selected inverse items", Toast.LENGTH_SHORT).show();
+		ItemListController ic = new ItemListController();
+	    for (Item i : ItemAdapter.getBox()) {
+	    	ic.selectInverse(i);
+		}
 	}
 	
 }

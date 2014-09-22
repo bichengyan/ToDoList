@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/emailItemButton"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true" >
+        android:layout_below="@+id/selectAllButton" >
 
     </ListView>
 
@@ -35,7 +35,7 @@
         android:layout_alignBottom="@+id/removeItemButton"
         android:layout_alignLeft="@+id/todoItemListView"
         android:onClick="finishItem"
-        android:text="@string/finish" />
+        android:text="@string/check" />
 
     <Button
         android:id="@+id/emailItemButton"
@@ -55,5 +55,36 @@
         android:layout_toRightOf="@+id/removeItemButton"
         android:onClick="archiveItem"
         android:text="@string/archive" />
+
+    <Button
+        android:id="@+id/selectAllButton"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:onClick="selectAll"
+        android:text="@string/select_all" />
+
+    <Button
+        android:id="@+id/selectNoneButton"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/selectAllButton"
+        android:layout_alignBottom="@+id/selectAllButton"
+        android:layout_toRightOf="@+id/selectAllButton"
+        android:onClick="selectNone"
+        android:text="@string/select_none" />
+
+    <Button
+        android:id="@+id/button1"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/selectNoneButton"
+        android:layout_toRightOf="@+id/selectNoneButton"
+        android:onClick="selectInverse"
+        android:text="@string/select_inverse" />
 
 </RelativeLayout>

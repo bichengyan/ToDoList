@@ -20,5 +20,17 @@ public class ItemListController {
 	public void changeStatus(Item item) {
 		getItemList().changeStatus(item);
 	}
+
+	public void selectAll(Item item) {
+		getItemList().selectAll(item);
+	}
+
+	public void selectNone(Item item) {
+		getItemList().selectNone(item);
+	}
+
+	public void selectInverse(Item item) {
+		getItemList().selectInverse(item);
+	}
 	
 }
