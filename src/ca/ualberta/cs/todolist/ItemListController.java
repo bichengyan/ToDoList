@@ -12,5 +12,13 @@ public class ItemListController {
 	public void addItem(Item item) {
 		getItemList().addItem(item);
 	}
+
+	public void removeItem(Item item) {
+		getItemList().removeItem(item);
+	}
+
+	public void changeStatus(Item item) {
+		getItemList().changeStatus(item);
+	}
 	
 }

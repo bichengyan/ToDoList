@@ -14,38 +14,45 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/emailItemButton"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
         android:layout_alignParentTop="true" >
 
     </ListView>
 
     <Button
-        android:id="@+id/emailItemButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/archiveItemButton"
-        android:layout_alignParentRight="true"
-        android:layout_toRightOf="@+id/archiveItemButton"
-        android:onClick="emailItem"
-        android:text="@string/email" />
-
-    <Button
         android:id="@+id/removeItemButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/todoItemListView"
         android:layout_alignParentBottom="true"
-        android:layout_toLeftOf="@+id/archiveItemButton"
+        android:layout_toRightOf="@+id/finishItemButton"
         android:onClick="removeItem"
         android:text="@string/remove" />
+
+    <Button
+        android:id="@+id/finishItemButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/removeItemButton"
+        android:layout_alignBottom="@+id/removeItemButton"
+        android:layout_alignLeft="@+id/todoItemListView"
+        android:onClick="finishItem"
+        android:text="@string/finish" />
+
+    <Button
+        android:id="@+id/emailItemButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/todoItemListView"
+        android:onClick="emailItem"
+        android:text="@string/email" />
 
     <Button
         android:id="@+id/archiveItemButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/removeItemButton"
-        android:layout_alignBottom="@+id/removeItemButton"
-        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/emailItemButton"
+        android:layout_toRightOf="@+id/removeItemButton"
         android:onClick="archiveItem"
         android:text="@string/archive" />
 

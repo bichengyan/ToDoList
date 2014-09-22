@@ -14,5 +14,6 @@
     <string name="view_archived_item">View Archived Item</string>
     <string name="Add_New_Item">Add New Item</string>
     <string name="Summarize_Data">Summarize Data</string>
+    <string name="finish">Finish</string>
 
 </resources>

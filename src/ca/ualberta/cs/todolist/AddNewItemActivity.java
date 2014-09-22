@@ -13,7 +13,6 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 public class AddNewItemActivity extends Activity{
-
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

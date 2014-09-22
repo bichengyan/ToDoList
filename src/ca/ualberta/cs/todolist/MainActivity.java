@@ -26,11 +26,11 @@ import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
+	ListAdapter ItemAdapter;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -40,8 +40,7 @@ public class MainActivity extends Activity {
 		ListView listview = (ListView) findViewById(R.id.todoItemListView);
 		Collection<Item> items = ItemListController.getItemList().getItems();
 		final ArrayList<Item> list = new ArrayList<Item>(items);
-		final ArrayAdapter<Item> ItemAdapter;
-		ItemAdapter = new ArrayAdapter<Item>(this,android.R.layout.simple_list_item_1, list);
+		ItemAdapter = new ListAdapter(this, list);
 		listview.setAdapter(ItemAdapter);
 		
 		//update observer
@@ -81,8 +80,28 @@ public class MainActivity extends Activity {
 		startActivity(intent);
 	}
 	
+	public void finishItem(View v){
+		ItemListController ic = new ItemListController();
+	    String result = "Selected items are :";
+	    
+	    for (Item i : ItemAdapter.getBox()) {
+	      if (i.box){
+	        result += "\n" + i.getName();
+	        ic.changeStatus(i);
+	        i.box = false;
+	      }
+	    }
+	    Toast.makeText(this, result, Toast.LENGTH_LONG).show();
+	}
+	
 	public void removeItem(View v){
-		Toast.makeText(this, "remove item", Toast.LENGTH_SHORT).show();
+		Toast.makeText(this, "removing item", Toast.LENGTH_SHORT).show();
+		ItemListController ic = new ItemListController();
+	    for (Item i : ItemAdapter.getBox()) {
+		      if (i.box){
+		    	  ic.removeItem(i);
+		      }
+		    }	
 	}
 	
 	public void archiveItem(View v){
@@ -92,4 +111,5 @@ public class MainActivity extends Activity {
 	public void emailItem(View v){
 		Toast.makeText(this, "email item", Toast.LENGTH_SHORT).show();
 	}
+	
 }
