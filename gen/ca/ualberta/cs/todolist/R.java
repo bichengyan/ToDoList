@@ -25,13 +25,14 @@ public final class R {
         public static final int ic_todo=0x7f020001;
     }
     public static final class id {
-        public static final int AddNewItem=0x7f08001d;
-        public static final int action_settings=0x7f08001c;
+        public static final int AddNewItem=0x7f08001e;
+        public static final int UnarchiveItemButton=0x7f08001b;
+        public static final int action_settings=0x7f08001d;
         public static final int addNewItemBotton=0x7f08000a;
         public static final int archiveItemButton=0x7f080005;
         public static final int archivedCheckedNumTextview=0x7f080017;
         public static final int archivedCheckedTextview=0x7f080016;
-        public static final int archivedItemListview=0x7f08001b;
+        public static final int archivedItemListview=0x7f08001c;
         public static final int archivedUncheckedNumTextview=0x7f080019;
         public static final int archivedUncheckedTextview=0x7f080018;
         public static final int button1=0x7f080007;
@@ -47,7 +48,7 @@ public final class R {
         public static final int removeItemButton=0x7f080003;
         public static final int selectAllButton=0x7f080002;
         public static final int selectNoneButton=0x7f080006;
-        public static final int summarizeData=0x7f08001f;
+        public static final int summarizeData=0x7f080020;
         public static final int todoArchivedNumTextview=0x7f080015;
         public static final int todoArchivedTextview=0x7f080013;
         public static final int todoCheckedNumTextview=0x7f080010;
@@ -56,7 +57,7 @@ public final class R {
         public static final int todoItemListView2=0x7f080008;
         public static final int todoUncheckNumTextview=0x7f080012;
         public static final int todoUncheckedTextview=0x7f080014;
-        public static final int viewArchivedItem=0x7f08001e;
+        public static final int viewArchivedItem=0x7f08001f;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -88,6 +89,7 @@ public final class R {
         public static final int title_activity_add_new_item=0x7f050003;
         public static final int title_activity_summarized_data=0x7f050005;
         public static final int title_activity_view_archived=0x7f050004;
+        public static final int unarchive=0x7f050011;
         public static final int view_archived_item=0x7f05000a;
     }
     public static final class style {

@@ -52,4 +52,17 @@ public class ViewArchivedActivity extends Activity {
 		      }
 		}
 	}
+	
+	public void unarchiveItem(View v){
+		Toast.makeText(this, "unarchiving item", Toast.LENGTH_SHORT).show();
+		ItemListController ic = new ItemListController();
+	    for (Item i : ItemAdapter.getCheckedBox()) {
+		      if (i.box){
+		    	  i.box = false;
+		    	  ItemListController.getItemList().NotifyListeners();
+		    	  ic.addItem(i);
+		    	  ic.removeArchivedItem(i);
+		      }
+		}
+	}
 }

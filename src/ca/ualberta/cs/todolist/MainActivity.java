@@ -88,7 +88,6 @@ public class MainActivity extends Activity {
 	      if (i.box){
 	        result += "\n" + i.getName();
 	        ic.changeStatus(i);
-	        i.box = false;
 	      }
 	    }
 	    Toast.makeText(this, result, Toast.LENGTH_LONG).show();
@@ -100,6 +99,7 @@ public class MainActivity extends Activity {
 	    for (Item i : ItemAdapter.getCheckedBox()) {
 		      if (i.box){
 		    	  ic.removeItem(i);
+		    	  i.box = false;
 		      }
 		}	
 	}
@@ -109,13 +109,33 @@ public class MainActivity extends Activity {
 		ItemListController ic = new ItemListController();
 	    for (Item i : ItemAdapter.getCheckedBox()) {
 		      if (i.box){
+		    	  i.box = false;
+		    	  ItemListController.getItemList().NotifyListeners();
 		    	  ic.addArchivedItem(i);
+		    	  ic.removeItem(i);
 		      }
 		}
 	}
 	
 	public void emailItem(View v){
-		Toast.makeText(this, "Emailing item", Toast.LENGTH_SHORT).show();
+	    String emailBody = "Selected items are :";
+	    
+	    for (Item i : ItemAdapter.getCheckedBox()) {
+	      if (i.box){
+	        emailBody += "\n" + i.getName();
+	      }
+	    }
+	    
+		Intent intent = new Intent(Intent.ACTION_SEND);
+		intent.setType("message/rfc822");
+		intent.putExtra(Intent.EXTRA_EMAIL  , new String[]{"recipient@example.com"});
+		intent.putExtra(Intent.EXTRA_SUBJECT, "TODO List");
+		intent.putExtra(Intent.EXTRA_TEXT   , emailBody);
+		try {
+		    startActivity(Intent.createChooser(intent, "Send mail..."));
+		} catch (android.content.ActivityNotFoundException ex) {
+		    Toast.makeText(this, "There are no email clients installed.", Toast.LENGTH_SHORT).show();
+		}
 	}
 	
 	public void selectAll(View v){

@@ -30,6 +30,7 @@ public class ItemList {
 	
 	public void addArchivedItem(Item testItem) {
 		ArchivedItemList.add(testItem);
+		testItem.box = false;
 		NotifyListeners();
 	}
 	
@@ -43,7 +44,7 @@ public class ItemList {
 		NotifyListeners();
 	}
 	
-	private void NotifyListeners() {
+	public void NotifyListeners() {
 		for (Listener listener : listeners) {
 			listener.update();
 		}	
@@ -66,6 +67,7 @@ public class ItemList {
 			testItem.itemStatus = "TODO";
 			testItem.image = R.drawable.ic_todo;
 		}
+		testItem.box = false;
 		NotifyListeners();
 	}
 

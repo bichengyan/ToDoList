@@ -18,5 +18,6 @@
     <string name="select_all">Select All</string>
     <string name="select_none">Select None</string>
     <string name="select_inverse">Select Inverse </string>
+    <string name="unarchive">Unarchive</string>
 
 </resources>
