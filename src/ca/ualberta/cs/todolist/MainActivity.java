@@ -30,6 +30,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
+	
 	ListAdapter ItemAdapter;
 	
 	@Override
@@ -37,6 +38,7 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
+		ItemListManager.initManager(this.getApplicationContext());
 		ListView listview = (ListView) findViewById(R.id.todoItemListView);
 		Collection<Item> items = ItemListController.getItemList().getItems();
 		final ArrayList<Item> list = new ArrayList<Item>(items);
@@ -61,7 +63,7 @@ public class MainActivity extends Activity {
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
-
+	
 	public void addNewItem(MenuItem menu){
 		Toast.makeText(this, "add New item", Toast.LENGTH_SHORT).show();
 		Intent intent = new Intent(MainActivity.this,AddNewItemActivity.class);
@@ -94,7 +96,7 @@ public class MainActivity extends Activity {
 	}
 	
 	public void removeItem(View v){
-		Toast.makeText(this, "Removing item", Toast.LENGTH_SHORT).show();
+		Toast.makeText(this, "Item Removed", Toast.LENGTH_SHORT).show();
 		ItemListController ic = new ItemListController();
 	    for (Item i : ItemAdapter.getCheckedBox()) {
 		      if (i.box){
@@ -105,7 +107,7 @@ public class MainActivity extends Activity {
 	}
 	
 	public void archiveItem(View v){
-		Toast.makeText(this, "Archiving item", Toast.LENGTH_SHORT).show();
+		Toast.makeText(this, "Item Archived", Toast.LENGTH_SHORT).show();
 		ItemListController ic = new ItemListController();
 	    for (Item i : ItemAdapter.getCheckedBox()) {
 		      if (i.box){
@@ -161,5 +163,4 @@ public class MainActivity extends Activity {
 	    	ic.selectInverse(i);
 		}
 	}
-	
 }

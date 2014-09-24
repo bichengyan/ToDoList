@@ -1,7 +1,13 @@
 package ca.ualberta.cs.todolist;
 
-public class Item {
+import java.io.Serializable;
+
+public class Item implements Serializable{
 	
+	/**
+	 * Item serializble ID
+	 */
+	private static final long serialVersionUID = 3139496345116943322L;
 	protected String itemName;
 	public boolean box;
 	public int image;

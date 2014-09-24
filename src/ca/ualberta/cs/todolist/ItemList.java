@@ -1,20 +1,32 @@
 package ca.ualberta.cs.todolist;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class ItemList {
-	
+public class ItemList implements Serializable{
+
+	/**
+	 * ItemList serialization ID
+	 */
+	private static final long serialVersionUID = -6647489627875174030L;
 	protected ArrayList<Item> ItemList;
 	protected ArrayList<Item> ArchivedItemList;
-	protected ArrayList<Listener> listeners;
+	protected transient ArrayList<Listener> listeners = null ;
 	
 	public ItemList() {
 		ItemList = new ArrayList<Item>();	
 		listeners = new ArrayList<Listener>();
 		ArchivedItemList = new ArrayList<Item>();
 	}
-		
+	
+	private ArrayList<Listener> getListeners() {
+		if (listeners == null ) {
+			listeners = new ArrayList<Listener>();
+		}
+		return listeners;
+	}
+	
 	public Collection<Item> getItems() {
 		return ItemList;	
 	}
@@ -45,17 +57,17 @@ public class ItemList {
 	}
 	
 	public void NotifyListeners() {
-		for (Listener listener : listeners) {
+		for (Listener listener : getListeners()) {
 			listener.update();
 		}	
 	}
 	
 	public void addListener(Listener l) {
-		listeners.add(l);
+		getListeners().add(l);
 	}
 	
 	public void removeListener(Listener l) {
-		listeners.remove(l);
+		getListeners().remove(l);
 	}
 	
 	public void changeStatus (Item testItem){	

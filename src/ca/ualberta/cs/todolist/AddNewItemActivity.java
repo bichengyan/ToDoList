@@ -17,7 +17,8 @@ public class AddNewItemActivity extends Activity{
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.add_new_item);
-				
+			
+		ItemListManager.initManager(this.getApplicationContext());
 		ListView listview2 = (ListView) findViewById(R.id.todoItemListView2);
 		Collection<Item> items = ItemListController.getItemList().getItems();
 		final ArrayList<Item> list = new ArrayList<Item>(items);

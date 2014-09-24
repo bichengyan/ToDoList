@@ -1,21 +1,75 @@
 package ca.ualberta.cs.todolist;
 
+import java.io.IOException;
+
 public class ItemListController {
 	private static ItemList itemList = null;
 	private static ItemList archivedItemList = null;
 	
 	static public ItemList getItemList(){
 		if (itemList == null) {
-			itemList = new ItemList();
+			try {
+				itemList = ItemListManager.getManager().loadItemList();
+				itemList.addListener(new Listener() {
+					@Override
+					public void update() {
+						saveItemList();
+					}
+				});
+			} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				throw new RuntimeException("Could not deserialize StudentList from ItemListManager");
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				throw new RuntimeException("Could not deserialize StudentList from ItemListManager");
+			}
 		}
 		return itemList;
 	}
-
+	
 	static public ItemList getArchivedItemList(){
 		if (archivedItemList == null) {
-			archivedItemList = new ItemList();
+			try {
+				archivedItemList = ItemListManager.getManager().loadArchivedItemList();
+				archivedItemList.addListener(new Listener() {
+					@Override
+					public void update() {
+						saveArchievdItemList();
+					}
+				});
+			} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				throw new RuntimeException("Could not deserialize StudentList from ItemListManager");
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				throw new RuntimeException("Could not deserialize StudentList from ItemListManager");
+			}
 		}
 		return archivedItemList;
+	}
+	
+	static public void saveItemList() {
+		try {
+			ItemListManager.getManager().saveItemList(getItemList());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+				throw new RuntimeException("Could not deserialize StudentList from StudentListManager");
+		}	
+	}
+	
+	static public void saveArchievdItemList() {
+		try {
+			ItemListManager.getManager().saveArchivedItemList(getArchivedItemList());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+				throw new RuntimeException("Could not deserialize StudentList from StudentListManager");
+		}	
 	}
 	
 	public void addItem(Item item) {
