@@ -89,4 +89,28 @@ public class ViewArchivedActivity extends Activity {
 		}
 		Toast.makeText(this, emailBody, Toast.LENGTH_LONG).show();
 	}
+	
+	public void selectAll_archived(View v){
+		Toast.makeText(this, "Selected all items", Toast.LENGTH_SHORT).show();
+		ItemListController ic = new ItemListController();
+		for (Item i : ItemAdapter.getUncheckedBox()) {
+			ic.selectAll_archived(i);
+		}
+	}
+	
+	public void selectNone_archived(View v){
+		Toast.makeText(this, "Selected None items", Toast.LENGTH_SHORT).show();
+		ItemListController ic = new ItemListController();
+	    for (Item i : ItemAdapter.getCheckedBox()) {
+	    	ic.selectNone_archived(i);
+		}
+	}
+	
+	public void selectInverse_archived(View v){
+		Toast.makeText(this, "Selected inverse items", Toast.LENGTH_SHORT).show();
+		ItemListController ic = new ItemListController();
+	    for (Item i : ItemAdapter.getBox()) {
+	    	ic.selectInverse_archived(i);
+		}
+	}
 }

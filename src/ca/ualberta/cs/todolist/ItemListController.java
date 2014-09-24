@@ -103,5 +103,20 @@ public class ItemListController {
 	public void selectInverse(Item item) {
 		getItemList().selectInverse(item);
 	}
+
+	public int getTotalArchivedNum() {
+		return getArchivedItemList().getTotalArchivedNum();
+	}
+
+	public void selectAll_archived(Item item) {
+		getArchivedItemList().selectAll(item);
+	}
 	
+	public void selectNone_archived(Item item) {
+		getArchivedItemList().selectNone(item);
+	}
+
+	public void selectInverse_archived(Item item) {
+		getArchivedItemList().selectInverse(item);
+	}
 }

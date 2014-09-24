@@ -82,6 +82,11 @@ public class MainActivity extends Activity {
 		startActivity(intent);
 	}
 	
+	public void emailAllItem(MenuItem menu){
+		Toast.makeText(this, "Emailing all items", Toast.LENGTH_SHORT).show();
+		
+	}
+	
 	public void finishItem(View v){
 		ItemListController ic = new ItemListController();
 	    String result = "Selected items are :";

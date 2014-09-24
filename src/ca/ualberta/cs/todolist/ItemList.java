@@ -71,8 +71,8 @@ public class ItemList implements Serializable{
 	}
 	
 	public void changeStatus (Item testItem){	
-		if (testItem.getStatus() == "TODO"){
-			testItem.itemStatus = "Finished"; 
+		if (testItem.getStatus().equals("TODO")){
+			testItem.itemStatus = "Done"; 
 			testItem.image = R.drawable.ic_launcher;
 		}
 		else{
@@ -101,5 +101,9 @@ public class ItemList implements Serializable{
 			testitem.box = true;
 		}
 		NotifyListeners();
+	}
+
+	public int getTotalArchivedNum() {
+		return ArchivedItemList.size();
 	}
 }

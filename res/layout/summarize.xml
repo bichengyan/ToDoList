@@ -10,7 +10,6 @@
         android:layout_alignBaseline="@+id/todoCheckedTextview"
         android:layout_alignBottom="@+id/todoCheckedTextview"
         android:layout_toRightOf="@+id/todoCheckedTextview"
-        android:text="Num"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
@@ -19,7 +18,6 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/todoArchivedTextview"
         android:layout_toRightOf="@+id/todoUncheckedTextview"
-        android:text="Num"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
@@ -47,7 +45,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="59dp"
-        android:text="Todo Item Checked:"
+        android:text="@string/check_todo_num"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
@@ -57,7 +55,7 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/todoCheckedNumTextview"
         android:layout_marginTop="34dp"
-        android:text="Todo Item Unchecked:"
+        android:text="@string/todo_uncheck_num"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
@@ -67,7 +65,6 @@
         android:layout_below="@+id/todoUncheckedTextview"
         android:layout_marginTop="28dp"
         android:layout_toLeftOf="@+id/todoArchivedNumTextview"
-        android:text="Todo Item archived:"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView

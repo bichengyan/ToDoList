@@ -1,6 +1,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
     <item android:id="@+id/AddNewItem" android:title="@string/Add_New_Item" android:onClick="addNewItem"></item><item android:id="@+id/viewArchivedItem" android:title="@string/view_archived_item" android:onClick="viewArchivedItem"></item>
     
-    <item android:id="@+id/summarizeData" android:title="@string/Summarize_Data" android:onClick="summarizeData"></item>
+    <item android:id="@+id/emailAll" android:title="@string/email_all" android:onClick="emailAllItem"></item><item android:id="@+id/summarizeData" android:title="@string/Summarize_Data" android:onClick="summarizeData"></item>
+    
 
 </menu>

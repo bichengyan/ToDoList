@@ -62,7 +62,7 @@ public class ListAdapter extends BaseAdapter {
 	Item getProduct(int position) {
 		return ((Item) getItem(position));
 	}
-
+	
 	ArrayList<Item> getBox() {
 		ArrayList<Item> box = new ArrayList<Item>();
 		for (Item i : objects) {

@@ -19,6 +19,9 @@
     <string name="select_none">Select None</string>
     <string name="select_inverse">Select Inverse </string>
     <string name="unarchive">Unarchive</string>
-    <string name="email_all">Email All</string>
+    <string name="email_all">Email All Items</string>
+    <string name="check_todo_num">Todo Item Checked:  </string>
+    <string name="todo_uncheck_num">Todo Item Unchecked:  </string>
+    <string >Todo Item archived:  </string>
 
 </resources>

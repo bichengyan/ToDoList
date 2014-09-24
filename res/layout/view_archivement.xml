@@ -14,16 +14,6 @@
         android:onClick="removeItemAction"
         android:text="@string/remove" />
 
-    <ListView
-        android:id="@+id/archivedItemListview"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/removeArchivedItemButton"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true" >
-
-    </ListView>
-
     <Button
         android:id="@+id/emailArchivedItemButton"
         android:layout_width="wrap_content"
@@ -38,9 +28,47 @@
         android:id="@+id/UnarchiveItemButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/archivedItemListview"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:onClick="unarchiveItem"
         android:text="@string/unarchive" />
+
+    <Button
+        android:id="@+id/selectAllArchivedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:onClick="selectAll_archived"
+        android:text="@string/select_all" />
+
+    <Button
+        android:id="@+id/selectNoneArchivedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/selectAllArchivedButton"
+        android:onClick="selectNone_archived"
+        android:text="@string/select_none" />
+
+    <Button
+        android:id="@+id/selectInverseArchivedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/selectNoneArchivedButton"
+        android:onClick="selectInverse_archived"
+        android:text="@string/select_inverse" />
+
+    <ListView
+        android:id="@+id/archivedItemListview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/removeArchivedItemButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/selectAllArchivedButton" >
+
+    </ListView>
 
 </RelativeLayout>
