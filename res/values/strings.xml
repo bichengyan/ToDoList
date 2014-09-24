@@ -22,6 +22,8 @@
     <string name="email_all">Email All Items</string>
     <string name="check_todo_num">Todo Item Checked:  </string>
     <string name="todo_uncheck_num">Todo Item Unchecked:  </string>
-    <string >Todo Item archived:  </string>
+    <string name="todo_archived">Todo Item archived:  </string>
+    <string name="archived_checked">Archived Item checked:  </string>
+    <string name="archived_unchecked">Archived Item unchecked:  </string>
 
 </resources>

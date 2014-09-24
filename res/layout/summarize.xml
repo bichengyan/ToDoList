@@ -26,7 +26,6 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/archivedCheckedTextview"
         android:layout_alignLeft="@+id/todoCheckedNumTextview"
-        android:text="Num"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
@@ -35,7 +34,6 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/archivedUncheckedTextview"
         android:layout_toRightOf="@+id/archivedCheckedTextview"
-        android:text="Num"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
@@ -65,6 +63,7 @@
         android:layout_below="@+id/todoUncheckedTextview"
         android:layout_marginTop="28dp"
         android:layout_toLeftOf="@+id/todoArchivedNumTextview"
+        android:text="@string/todo_archived"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
@@ -74,7 +73,7 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/todoArchivedTextview"
         android:layout_marginTop="31dp"
-        android:text="Archived Item checked:"
+        android:text="@string/archived_checked"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
@@ -84,7 +83,7 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/archivedCheckedTextview"
         android:layout_marginTop="38dp"
-        android:text="Archived Item unchecked:"
+        android:text="@string/archived_unchecked"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
@@ -94,7 +93,6 @@
         android:layout_alignBaseline="@+id/archivedUncheckedTextview"
         android:layout_alignBottom="@+id/archivedUncheckedTextview"
         android:layout_toRightOf="@+id/archivedUncheckedTextview"
-        android:text="Num"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </RelativeLayout>

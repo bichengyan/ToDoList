@@ -84,6 +84,8 @@ public final class R {
         public static final int add=0x7f050009;
         public static final int app_name=0x7f050000;
         public static final int archive=0x7f050007;
+        public static final int archived_checked=0x7f050016;
+        public static final int archived_unchecked=0x7f050017;
         public static final int check=0x7f05000d;
         public static final int check_todo_num=0x7f050013;
         public static final int email=0x7f050008;
@@ -96,6 +98,7 @@ public final class R {
         public static final int title_activity_add_new_item=0x7f050003;
         public static final int title_activity_summarized_data=0x7f050005;
         public static final int title_activity_view_archived=0x7f050004;
+        public static final int todo_archived=0x7f050015;
         public static final int todo_uncheck_num=0x7f050014;
         public static final int unarchive=0x7f050011;
         public static final int view_archived_item=0x7f05000a;
