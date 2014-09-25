@@ -17,9 +17,9 @@ public class ListAdapter extends BaseAdapter {
 	LayoutInflater lInflater;
 	ArrayList<Item> objects;
 
-	ListAdapter(Context context, ArrayList<Item> products) {
+	ListAdapter(Context context, ArrayList<Item> Items) {
 		ctx = context;
-		objects = products;
+		objects = Items;
 		lInflater = (LayoutInflater) ctx
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 	}
@@ -46,7 +46,7 @@ public class ListAdapter extends BaseAdapter {
 			view = lInflater.inflate(R.layout.item, parent, false);
 		}
 
-		Item i = getProduct(position);
+		Item i = get_Item(position);
 		
 		((TextView) view.findViewById(R.id.itemNames)).setText(i.getName());
 		((TextView) view.findViewById(R.id.itemStatus)).setText(i.getStatus());
@@ -59,7 +59,7 @@ public class ListAdapter extends BaseAdapter {
 		return view;
 	}
 
-	Item getProduct(int position) {
+	Item get_Item(int position) {
 		return ((Item) getItem(position));
 	}
 	
@@ -92,7 +92,7 @@ public class ListAdapter extends BaseAdapter {
 	OnCheckedChangeListener myCheckChangeList = new OnCheckedChangeListener() {
 		public void onCheckedChanged(CompoundButton buttonView,
 				boolean isChecked) {
-			getProduct((Integer) buttonView.getTag()).box = isChecked;
+			get_Item((Integer) buttonView.getTag()).box = isChecked;
 		}
 	};
 }

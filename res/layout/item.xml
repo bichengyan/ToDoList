@@ -6,6 +6,7 @@
 
     <CheckBox
         android:id="@+id/cbBox"
+        android:layout_margin="15dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
@@ -14,8 +15,9 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
-        android:orientation="vertical"
-        android:layout_weight="1" >
+        android:layout_weight="1"
+        android:onClick="finishItem"
+        android:orientation="vertical" >
 
         <TextView
             android:id="@+id/itemNames"
@@ -24,6 +26,7 @@
             android:layout_margin="5dp"
             android:text=""
             android:textSize="20sp" >
+
         </TextView>
 
         <TextView
@@ -38,7 +41,9 @@
         android:id="@+id/ivImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="15dp"
         android:contentDescription="@string/app_name"
-        android:src="@drawable/ic_todo" />
+        android:onClick="finishItem"
+        android:src="@drawable/unchecked" />
 
 </LinearLayout>

@@ -91,7 +91,11 @@ public class ItemListController {
 	public void changeStatus(Item item) {
 		getItemList().changeStatus(item);
 	}
-
+	
+	public void changeArchivedStatus(Item item) {
+		getArchivedItemList().changeStatus(item);
+	}
+	
 	public void selectAll(Item item) {
 		getItemList().selectAll(item);
 	}

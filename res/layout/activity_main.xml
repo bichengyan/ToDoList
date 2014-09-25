@@ -41,33 +41,13 @@
         android:onClick="selectAll"
         android:text="@string/select_all" />
 
-    <Button
-        android:id="@+id/archiveItemButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/finishItemButton"
-        android:onClick="archiveItem"
-        android:text="@string/archive" />
-
-    <Button
-        android:id="@+id/finishItemButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/emailItemButton"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:onClick="finishItem"
-        android:text="@string/check" />
-
     <ListView
         android:id="@+id/todoItemListView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/finishItemButton"
+        android:layout_above="@+id/emailItemButton"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/selectNoneButton" >
-
     </ListView>
 
     <Button
@@ -79,5 +59,14 @@
         android:layout_toRightOf="@+id/archiveItemButton"
         android:onClick="emailItem"
         android:text="@string/email" />
+
+    <Button
+        android:id="@+id/archiveItemButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:onClick="archiveItem"
+        android:text="@string/archive" />
 
 </RelativeLayout>

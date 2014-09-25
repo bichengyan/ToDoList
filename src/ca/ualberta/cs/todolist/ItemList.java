@@ -73,11 +73,11 @@ public class ItemList implements Serializable{
 	public void changeStatus (Item testItem){	
 		if (testItem.getStatus().equals("TODO")){
 			testItem.itemStatus = "DONE"; 
-			testItem.image = R.drawable.ic_launcher;
+			testItem.image = R.drawable.checked;
 		}
 		else{
 			testItem.itemStatus = "TODO";
-			testItem.image = R.drawable.ic_todo;
+			testItem.image = R.drawable.unchecked;
 		}
 		testItem.box = false;
 		NotifyListeners();

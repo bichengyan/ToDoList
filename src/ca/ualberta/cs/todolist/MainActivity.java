@@ -45,7 +45,7 @@ public class MainActivity extends Activity {
 		final ArrayList<Item> list = new ArrayList<Item>(items);
 		ItemAdapter = new ListAdapter(this, list);
 		listview.setAdapter(ItemAdapter);
-		
+
 		//update observer
 		ItemListController.getItemList().addListener(new Listener() {		
 			@Override
@@ -66,29 +66,25 @@ public class MainActivity extends Activity {
 	}
 	
 	public void addNewItem(MenuItem menu){
-		Toast.makeText(this, "add New item", Toast.LENGTH_SHORT).show();
 		Intent intent = new Intent(MainActivity.this,AddNewItemActivity.class);
 		startActivity(intent);
 	}
 	
 	public void viewArchivedItem(MenuItem menu){
-		Toast.makeText(this, "view archived ithem", Toast.LENGTH_SHORT).show();
 		Intent intent = new Intent(MainActivity.this,ViewArchivedActivity.class);
 		startActivity(intent);
 	}
 	
 	public void summarizeData(MenuItem menu){
-		Toast.makeText(this, "summarize data", Toast.LENGTH_SHORT).show();
 		Intent intent = new Intent(MainActivity.this,SummarizedDataActivity.class);
 		startActivity(intent);
 	}
 	
 	public void emailAllItem(MenuItem menu){
-		Toast.makeText(this, "Emailing all items", Toast.LENGTH_SHORT).show();
-		
 	    String emailBody_todo = "Todo items are :";
 	    String emailBody_archived = "Archive items are :";
 	    String emailBody = "";
+	    String emailtest = emailBody_todo + "\n\n" + emailBody_archived;
 	    
 	    for (Item i : ItemAdapter.getBox()) {
 	        emailBody_todo += "\n" + i.getName();
@@ -103,79 +99,73 @@ public class MainActivity extends Activity {
 		    }
 	    
 	    emailBody = emailBody_todo + "\n\n" + emailBody_archived;
-		Intent intent = new Intent(Intent.ACTION_SEND);
-		intent.setType("message/rfc822");
-		intent.putExtra(Intent.EXTRA_EMAIL  , new String[]{"recipient@example.com"});
-		intent.putExtra(Intent.EXTRA_SUBJECT, "TODO List");
-		intent.putExtra(Intent.EXTRA_TEXT   , emailBody);
-		try {
-		    startActivity(Intent.createChooser(intent, "Send mail..."));
-		} catch (android.content.ActivityNotFoundException ex) {
-		    Toast.makeText(this, "There are no email clients installed.", Toast.LENGTH_SHORT).show();
-		}
-		
-		
+	    if (!(emailBody.equals(emailtest))){
+			Intent intent = new Intent(Intent.ACTION_SEND);
+			intent.setType("message/rfc822");
+			intent.putExtra(Intent.EXTRA_EMAIL  , new String[]{"recipient@example.com"});
+			intent.putExtra(Intent.EXTRA_SUBJECT, "TODO List");
+			intent.putExtra(Intent.EXTRA_TEXT   , emailBody);
+			try {
+			    startActivity(Intent.createChooser(intent, "Send mail..."));
+			} catch (android.content.ActivityNotFoundException ex) {
+			    Toast.makeText(this, "There are no email clients installed.", Toast.LENGTH_SHORT).show();
+			}
+	    }
+	    else{
+	    	Toast.makeText(this, "There are no items in the application", Toast.LENGTH_SHORT).show();
+	    }
 	}
 	
 	public void finishItem(View v){
 		ItemListController ic = new ItemListController();
-	    String result = "Selected items are :";
-	    
 	    for (Item i : ItemAdapter.getCheckedBox()) {
-	      if (i.box){
-	        result += "\n" + i.getName();
 	        ic.changeStatus(i);
-	      }
 	    }
-	    Toast.makeText(this, result, Toast.LENGTH_LONG).show();
 	}
 	
 	public void removeItem(View v){
-		Toast.makeText(this, "Item Removed", Toast.LENGTH_SHORT).show();
+		Toast.makeText(this, "Selected Items Removed", Toast.LENGTH_SHORT).show();
 		ItemListController ic = new ItemListController();
 	    for (Item i : ItemAdapter.getCheckedBox()) {
-		      if (i.box){
 		    	  ic.removeItem(i);
 		    	  i.box = false;
-		      }
 		}	
 	}
 	
-	public void archiveItem(View v){
-		Toast.makeText(this, "Item Archived", Toast.LENGTH_SHORT).show();
+	public void archiveItem(View v){	
+	    Toast.makeText(this, "Selected Items Archived", Toast.LENGTH_SHORT).show();
 		ItemListController ic = new ItemListController();
 	    for (Item i : ItemAdapter.getCheckedBox()) {
-		      if (i.box){
 		    	  i.box = false;
 		    	  ic.addArchivedItem(i);
 		    	  ic.removeItem(i);
-		      }
 		}
+
 	}
 	
 	public void emailItem(View v){
 	    String emailBody = "Todo items are :";
-	    
 	    for (Item i : ItemAdapter.getCheckedBox()) {
-	      if (i.box){
 	        emailBody += "\n" + i.getName();
-	      }
 	    }
-	    
-		Intent intent = new Intent(Intent.ACTION_SEND);
-		intent.setType("message/rfc822");
-		intent.putExtra(Intent.EXTRA_EMAIL  , new String[]{"recipient@example.com"});
-		intent.putExtra(Intent.EXTRA_SUBJECT, "TODO List");
-		intent.putExtra(Intent.EXTRA_TEXT   , emailBody);
-		try {
-		    startActivity(Intent.createChooser(intent, "Send mail..."));
-		} catch (android.content.ActivityNotFoundException ex) {
-		    Toast.makeText(this, "There are no email clients installed.", Toast.LENGTH_SHORT).show();
-		}
+	    if (emailBody != "Todo items are :"){
+			Intent intent = new Intent(Intent.ACTION_SEND);
+			intent.setType("message/rfc822");
+			intent.putExtra(Intent.EXTRA_EMAIL  , new String[]{"recipient@example.com"});
+			intent.putExtra(Intent.EXTRA_SUBJECT, "TODO List");
+			intent.putExtra(Intent.EXTRA_TEXT   , emailBody);
+			try {
+			    startActivity(Intent.createChooser(intent, "Send mail..."));
+			} catch (android.content.ActivityNotFoundException ex) {
+			    Toast.makeText(this, "There are no email clients installed.", Toast.LENGTH_SHORT).show();
+			}
+	    }
+	    else{
+	    	Toast.makeText(this, "No Item selected", Toast.LENGTH_SHORT).show();
+	    }
 	}
 	
 	public void selectAll(View v){
-		Toast.makeText(this, "Selected all items", Toast.LENGTH_SHORT).show();
 		ItemListController ic = new ItemListController();
 		for (Item i : ItemAdapter.getUncheckedBox()) {
 			ic.selectAll(i);
@@ -183,7 +173,6 @@ public class MainActivity extends Activity {
 	}
 	
 	public void selectNone(View v){
-		Toast.makeText(this, "Selected None items", Toast.LENGTH_SHORT).show();
 		ItemListController ic = new ItemListController();
 	    for (Item i : ItemAdapter.getCheckedBox()) {
 	    	ic.selectNone(i);
@@ -191,7 +180,6 @@ public class MainActivity extends Activity {
 	}
 	
 	public void selectInverse(View v){
-		Toast.makeText(this, "Selected inverse items", Toast.LENGTH_SHORT).show();
 		ItemListController ic = new ItemListController();
 	    for (Item i : ItemAdapter.getBox()) {
 	    	ic.selectInverse(i);

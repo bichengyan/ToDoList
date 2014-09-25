@@ -38,26 +38,28 @@ public class ViewArchivedActivity extends Activity {
 		});
 	}
 
-	public void removeItemAction(View v){
-		Toast.makeText(this, "removing an archived item!", Toast.LENGTH_SHORT).show();
+	public void finishItem(View v){
 		ItemListController ic = new ItemListController();
 	    for (Item i : ItemAdapter.getCheckedBox()) {
-		      if (i.box){
+	        ic.changeArchivedStatus(i);
+	    }
+	}
+	
+	public void removeItemAction(View v){
+		Toast.makeText(this, "Selected Items removed", Toast.LENGTH_SHORT).show();
+		ItemListController ic = new ItemListController();
+	    for (Item i : ItemAdapter.getCheckedBox()) {
 		    	  ic.removeArchivedItem(i);
-		      }
 		}
 	}
 	
 	public void unarchiveItem(View v){
-		Toast.makeText(this, "unarchiving item", Toast.LENGTH_SHORT).show();
+		Toast.makeText(this, "Selected Items unarchived", Toast.LENGTH_SHORT).show();
 		ItemListController ic = new ItemListController();
 	    for (Item i : ItemAdapter.getCheckedBox()) {
-		      if (i.box){
 		    	  i.box = false;
 		    	  ic.addItem(i);
 		    	  ic.removeArchivedItem(i);
-		    	  
-		      }
 		}
 	}
 	
@@ -65,26 +67,27 @@ public class ViewArchivedActivity extends Activity {
 	    String emailBody = "Archived items are :";
 	    
 	    for (Item i : ItemAdapter.getCheckedBox()) {
-	      if (i.box){
 	        emailBody += "\n" + i.getName();
-	      }
 	    }
 	    
-		Intent intent = new Intent(Intent.ACTION_SEND);
-		intent.setType("message/rfc822");
-		intent.putExtra(Intent.EXTRA_EMAIL  , new String[]{"recipient@example.com"});
-		intent.putExtra(Intent.EXTRA_SUBJECT, "TODO List");
-		intent.putExtra(Intent.EXTRA_TEXT   , emailBody);
-		try {
-		    startActivity(Intent.createChooser(intent, "Send mail..."));
-		} catch (android.content.ActivityNotFoundException ex) {
-		    Toast.makeText(this, "There are no email clients installed.", Toast.LENGTH_SHORT).show();
-		}
-		Toast.makeText(this, emailBody, Toast.LENGTH_LONG).show();
+	    if (emailBody != "Archived items are :"){
+			Intent intent = new Intent(Intent.ACTION_SEND);
+			intent.setType("message/rfc822");
+			intent.putExtra(Intent.EXTRA_EMAIL  , new String[]{"recipient@example.com"});
+			intent.putExtra(Intent.EXTRA_SUBJECT, "TODO List");
+			intent.putExtra(Intent.EXTRA_TEXT   , emailBody);
+			try {
+			    startActivity(Intent.createChooser(intent, "Send mail..."));
+			} catch (android.content.ActivityNotFoundException ex) {
+			    Toast.makeText(this, "There are no email clients installed.", Toast.LENGTH_SHORT).show();
+			}
+	    }
+	    else{
+	    	Toast.makeText(this, "No item selected", Toast.LENGTH_LONG).show();
+	    }
 	}
 	
 	public void selectAll_archived(View v){
-		Toast.makeText(this, "Selected all items", Toast.LENGTH_SHORT).show();
 		ItemListController ic = new ItemListController();
 		for (Item i : ItemAdapter.getUncheckedBox()) {
 			ic.selectAll_archived(i);
@@ -92,7 +95,6 @@ public class ViewArchivedActivity extends Activity {
 	}
 	
 	public void selectNone_archived(View v){
-		Toast.makeText(this, "Selected None items", Toast.LENGTH_SHORT).show();
 		ItemListController ic = new ItemListController();
 	    for (Item i : ItemAdapter.getCheckedBox()) {
 	    	ic.selectNone_archived(i);
@@ -100,7 +102,6 @@ public class ViewArchivedActivity extends Activity {
 	}
 	
 	public void selectInverse_archived(View v){
-		Toast.makeText(this, "Selected inverse items", Toast.LENGTH_SHORT).show();
 		ItemListController ic = new ItemListController();
 	    for (Item i : ItemAdapter.getBox()) {
 	    	ic.selectInverse_archived(i);

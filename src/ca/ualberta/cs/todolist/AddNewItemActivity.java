@@ -39,7 +39,7 @@ public class AddNewItemActivity extends Activity{
 	}
 	
 	public void addItemAction(View v){
-		Toast.makeText(this, "Adding a item!", Toast.LENGTH_SHORT).show();
+		Toast.makeText(this, "Item added", Toast.LENGTH_SHORT).show();
 		EditText textview = (EditText) findViewById(R.id.newItemEditText);
 		ItemListController ic = new ItemListController();
 		if (textview.getText().toString().length() > 0){
