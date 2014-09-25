@@ -6,7 +6,6 @@ import java.util.Collection;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
-import android.view.Menu;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -38,13 +37,6 @@ public class ViewArchivedActivity extends Activity {
 		});
 	}
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.view_archived, menu);
-		return true;
-	}
-
 	public void removeItemAction(View v){
 		Toast.makeText(this, "removing an archived item!", Toast.LENGTH_SHORT).show();
 		ItemListController ic = new ItemListController();
@@ -61,9 +53,9 @@ public class ViewArchivedActivity extends Activity {
 	    for (Item i : ItemAdapter.getCheckedBox()) {
 		      if (i.box){
 		    	  i.box = false;
-		    	  ItemListController.getItemList().NotifyListeners();
 		    	  ic.addItem(i);
 		    	  ic.removeArchivedItem(i);
+		    	  
 		      }
 		}
 	}

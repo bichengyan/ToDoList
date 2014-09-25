@@ -72,7 +72,7 @@ public class ItemList implements Serializable{
 	
 	public void changeStatus (Item testItem){	
 		if (testItem.getStatus().equals("TODO")){
-			testItem.itemStatus = "Done"; 
+			testItem.itemStatus = "DONE"; 
 			testItem.image = R.drawable.ic_launcher;
 		}
 		else{

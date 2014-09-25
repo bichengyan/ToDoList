@@ -10,7 +10,7 @@ public class Item implements Serializable{
 	private static final long serialVersionUID = 3139496345116943322L;
 	protected String itemName;
 	public boolean box;
-	public int image;
+	public int image = R.drawable.ic_todo;;
 	public String itemStatus = "TODO";
 	
 	public Item(String itemName){
@@ -27,5 +27,9 @@ public class Item implements Serializable{
 
 	public String getStatus() {
 		return this.itemStatus;
+	}
+
+	public int getImage() {
+		return this.image;
 	}	
 }

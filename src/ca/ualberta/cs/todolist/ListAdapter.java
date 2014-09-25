@@ -47,13 +47,13 @@ public class ListAdapter extends BaseAdapter {
 		}
 
 		Item i = getProduct(position);
-
+		
 		((TextView) view.findViewById(R.id.itemNames)).setText(i.getName());
 		((TextView) view.findViewById(R.id.itemStatus)).setText(i.getStatus());
-		((ImageView) view.findViewById(R.id.ivImage)).setImageResource(i.image);
+		((ImageView) view.findViewById(R.id.ivImage)).setImageResource(i.getImage());
 
 		CheckBox cbBuy = (CheckBox) view.findViewById(R.id.cbBox);
-		cbBuy.setOnCheckedChangeListener(myCheckChangList);
+		cbBuy.setOnCheckedChangeListener(myCheckChangeList);
 		cbBuy.setTag(position);
 		cbBuy.setChecked(i.box);
 		return view;
@@ -89,7 +89,7 @@ public class ListAdapter extends BaseAdapter {
 		return box;
 	}
 	
-	OnCheckedChangeListener myCheckChangList = new OnCheckedChangeListener() {
+	OnCheckedChangeListener myCheckChangeList = new OnCheckedChangeListener() {
 		public void onCheckedChanged(CompoundButton buttonView,
 				boolean isChecked) {
 			getProduct((Integer) buttonView.getTag()).box = isChecked;

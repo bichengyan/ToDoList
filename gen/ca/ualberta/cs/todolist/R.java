@@ -26,7 +26,7 @@ public final class R {
     }
     public static final class id {
         public static final int AddNewItem=0x7f080022;
-        public static final int UnarchiveItemButton=0x7f08001b;
+        public static final int UnarchiveItemButton=0x7f08001f;
         public static final int action_settings=0x7f080021;
         public static final int addNewItemBotton=0x7f08000a;
         public static final int archiveItemButton=0x7f080004;
@@ -37,7 +37,7 @@ public final class R {
         public static final int archivedUncheckedTextview=0x7f080018;
         public static final int cbBox=0x7f08000b;
         public static final int emailAll=0x7f080024;
-        public static final int emailArchivedItemButton=0x7f08001c;
+        public static final int emailArchivedItemButton=0x7f08001e;
         public static final int emailItemButton=0x7f080006;
         public static final int finishItemButton=0x7f080005;
         public static final int itemNames=0x7f08000d;
@@ -45,13 +45,13 @@ public final class R {
         public static final int ivImage=0x7f08000f;
         public static final int linearLayout1=0x7f08000c;
         public static final int newItemEditText=0x7f080009;
-        public static final int removeArchivedItemButton=0x7f08001a;
+        public static final int removeArchivedItemButton=0x7f08001d;
         public static final int removeItemButton=0x7f080003;
-        public static final int selectAllArchivedButton=0x7f08001d;
+        public static final int selectAllArchivedButton=0x7f08001a;
         public static final int selectAllButton=0x7f080001;
-        public static final int selectInverseArchivedButton=0x7f08001f;
+        public static final int selectInverseArchivedButton=0x7f08001c;
         public static final int selectInverseButton=0x7f080002;
-        public static final int selectNoneArchivedButton=0x7f08001e;
+        public static final int selectNoneArchivedButton=0x7f08001b;
         public static final int selectNoneButton=0x7f080000;
         public static final int summarizeData=0x7f080025;
         public static final int todoArchivedNumTextview=0x7f080015;

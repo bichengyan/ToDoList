@@ -5,7 +5,6 @@ import java.util.Collection;
 
 import android.os.Bundle;
 import android.app.Activity;
-import android.view.Menu;
 import android.widget.TextView;
 
 public class SummarizedDataActivity extends Activity {
@@ -22,14 +21,7 @@ public class SummarizedDataActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.summarize);
 	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.summarized_data, menu);
-		return true;
-	}
-
+	
 	@Override
 	protected void onResume(){
 		super.onResume();
@@ -51,7 +43,7 @@ public class SummarizedDataActivity extends Activity {
 	    ItemAdapter_two = new ListAdapter(this, ArchivedList);
 		
 	    for (Item i : ItemAdapter_one.getBox()) {
-		      if (i.itemStatus.equals("Done")){
+		      if (i.itemStatus.equals("DONE")){
 		    	  checked_todo_num++;
 		      }
 		      else{
@@ -61,7 +53,7 @@ public class SummarizedDataActivity extends Activity {
 	    
 
 	    for (Item a : ItemAdapter_two.getBox()) {
-		      if (a.itemStatus.equals("Done")){
+		      if (a.itemStatus.equals("DONE")){
 		    	  archived_checked_num++;
 		      }
 		      else{

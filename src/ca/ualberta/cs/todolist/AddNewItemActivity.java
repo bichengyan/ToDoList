@@ -5,7 +5,6 @@ import java.util.Collection;
 
 import android.os.Bundle;
 import android.app.Activity;
-import android.view.Menu;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -36,13 +35,6 @@ public class AddNewItemActivity extends Activity{
 				ItemAdapter.notifyDataSetChanged();
 			}
 		});
-	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.add_new_item, menu);
-		return true;
 	}
 	
 	public void addItemAction(View v){
