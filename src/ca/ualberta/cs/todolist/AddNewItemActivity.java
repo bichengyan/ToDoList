@@ -15,6 +15,7 @@ public class AddNewItemActivity extends Activity{
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		setTheme(android.R.style.Theme_Holo);
 		setContentView(R.layout.add_new_item);
 			
 		ItemListManager.initManager(this.getApplicationContext());

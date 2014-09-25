@@ -16,6 +16,7 @@ public class ViewArchivedActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		setTheme(android.R.style.Theme_Holo);
 		setContentView(R.layout.view_archivement);
 		
 		ItemListManager.initManager(this.getApplicationContext());
@@ -61,7 +62,7 @@ public class ViewArchivedActivity extends Activity {
 	}
 	
 	public void emailArchivedItem(View v){
-	    String emailBody = "Selected items are :";
+	    String emailBody = "Archived items are :";
 	    
 	    for (Item i : ItemAdapter.getCheckedBox()) {
 	      if (i.box){

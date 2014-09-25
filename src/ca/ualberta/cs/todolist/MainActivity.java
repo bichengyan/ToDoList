@@ -36,6 +36,7 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		setTheme(android.R.style.Theme_Holo);
 		setContentView(R.layout.activity_main);
 		
 		ItemListManager.initManager(this.getApplicationContext());
@@ -153,7 +154,7 @@ public class MainActivity extends Activity {
 	}
 	
 	public void emailItem(View v){
-	    String emailBody = "Selected items are :";
+	    String emailBody = "Todo items are :";
 	    
 	    for (Item i : ItemAdapter.getCheckedBox()) {
 	      if (i.box){
