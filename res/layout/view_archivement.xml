@@ -59,11 +59,21 @@
         android:onClick="unarchiveItem"
         android:text="@string/unarchive" />
 
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/emailArchivedItemButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:onClick="finishItem"
+        android:text="@string/check" />
+
     <ListView
         android:id="@+id/archivedItemListview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/removeArchivedItemButton"
+        android:layout_above="@+id/button1"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/selectAllArchivedButton" >
 

@@ -16,7 +16,6 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
         android:layout_weight="1"
-        android:onClick="finishItem"
         android:orientation="vertical" >
 
         <TextView
@@ -43,7 +42,6 @@
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
         android:contentDescription="@string/app_name"
-        android:onClick="finishItem"
         android:src="@drawable/unchecked" />
 
 </LinearLayout>

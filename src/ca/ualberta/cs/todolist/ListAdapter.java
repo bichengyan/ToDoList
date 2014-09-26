@@ -13,25 +13,25 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class ListAdapter extends BaseAdapter {
-	Context ctx;
+	Context context;
 	LayoutInflater lInflater;
-	ArrayList<Item> objects;
+	ArrayList<Item> ItemLists;
 
 	ListAdapter(Context context, ArrayList<Item> Items) {
-		ctx = context;
-		objects = Items;
-		lInflater = (LayoutInflater) ctx
+		this.context = context;
+		ItemLists = Items;
+		lInflater = (LayoutInflater) context
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 	}
 
 	@Override
 	public int getCount() {
-		return objects.size();
+		return ItemLists.size();
 	}
 
 	@Override
 	public Object getItem(int position) {
-		return objects.get(position);
+		return ItemLists.get(position);
 	}
 
 	@Override
@@ -52,10 +52,10 @@ public class ListAdapter extends BaseAdapter {
 		((TextView) view.findViewById(R.id.itemStatus)).setText(i.getStatus());
 		((ImageView) view.findViewById(R.id.ivImage)).setImageResource(i.getImage());
 
-		CheckBox cbBuy = (CheckBox) view.findViewById(R.id.cbBox);
-		cbBuy.setOnCheckedChangeListener(myCheckChangeList);
-		cbBuy.setTag(position);
-		cbBuy.setChecked(i.box);
+		CheckBox checkbox = (CheckBox) view.findViewById(R.id.cbBox);
+		checkbox.setOnCheckedChangeListener(myCheckChangeList);
+		checkbox.setTag(position);
+		checkbox.setChecked(i.box);
 		return view;
 	}
 
@@ -65,7 +65,7 @@ public class ListAdapter extends BaseAdapter {
 	
 	ArrayList<Item> getBox() {
 		ArrayList<Item> box = new ArrayList<Item>();
-		for (Item i : objects) {
+		for (Item i : ItemLists) {
 				box.add(i);
 		}
 		return box;
@@ -73,7 +73,7 @@ public class ListAdapter extends BaseAdapter {
 	
 	ArrayList<Item> getCheckedBox() {
 		ArrayList<Item> box = new ArrayList<Item>();
-		for (Item i : objects) {
+		for (Item i : ItemLists) {
 			if (i.box)
 				box.add(i);
 		}
@@ -82,7 +82,7 @@ public class ListAdapter extends BaseAdapter {
 	
 	ArrayList<Item> getUncheckedBox() {
 		ArrayList<Item> box = new ArrayList<Item>();
-		for (Item i : objects) {
+		for (Item i : ItemLists) {
 			if (!(i.box))
 				box.add(i);
 		}

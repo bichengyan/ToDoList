@@ -17,13 +17,11 @@ public class ItemListController {
 					}
 				});
 			} catch (ClassNotFoundException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
-				throw new RuntimeException("Could not deserialize StudentList from ItemListManager");
+				throw new RuntimeException("Could not deserialize ItemList from ItemListManager");
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
-				throw new RuntimeException("Could not deserialize StudentList from ItemListManager");
+				throw new RuntimeException("Could not deserialize ItemList from ItemListManager");
 			}
 		}
 		return itemList;
@@ -40,13 +38,11 @@ public class ItemListController {
 					}
 				});
 			} catch (ClassNotFoundException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
-				throw new RuntimeException("Could not deserialize StudentList from ItemListManager");
+				throw new RuntimeException("Could not deserialize ArchivedItemList from ItemListManager");
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
-				throw new RuntimeException("Could not deserialize StudentList from ItemListManager");
+				throw new RuntimeException("Could not deserialize ArchivedItemList from ItemListManager");
 			}
 		}
 		return archivedItemList;
@@ -56,9 +52,8 @@ public class ItemListController {
 		try {
 			ItemListManager.getManager().saveItemList(getItemList());
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
-				throw new RuntimeException("Could not deserialize StudentList from StudentListManager");
+				throw new RuntimeException("Could not deserialize ItemList from StudentListManager");
 		}	
 	}
 	
@@ -66,9 +61,8 @@ public class ItemListController {
 		try {
 			ItemListManager.getManager().saveArchivedItemList(getArchivedItemList());
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
-				throw new RuntimeException("Could not deserialize StudentList from StudentListManager");
+				throw new RuntimeException("Could not deserialize ItemList from StudentListManager");
 		}	
 	}
 	
