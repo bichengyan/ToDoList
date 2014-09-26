@@ -53,7 +53,7 @@ public class ItemListController {
 			ItemListManager.getManager().saveItemList(getItemList());
 		} catch (IOException e) {
 			e.printStackTrace();
-				throw new RuntimeException("Could not deserialize ItemList from StudentListManager");
+			throw new RuntimeException("Could not deserialize ItemList from ItemListManager");
 		}	
 	}
 	
@@ -62,7 +62,7 @@ public class ItemListController {
 			ItemListManager.getManager().saveArchivedItemList(getArchivedItemList());
 		} catch (IOException e) {
 			e.printStackTrace();
-				throw new RuntimeException("Could not deserialize ItemList from StudentListManager");
+			throw new RuntimeException("Could not deserialize ItemList from ItemListManager");
 		}	
 	}
 	

@@ -37,29 +37,23 @@ public class ItemList implements Serializable{
 	
 	public void addItem(Item testItem) {
 		ItemList.add(testItem);
-		NotifyDataChanged();
+		NotifyListener();
 	}
 	
 	public void addArchivedItem(Item testItem) {
 		ArchivedItemList.add(testItem);
 		testItem.box = false;
-		NotifyDataChanged();
+		NotifyListener();
 	}
 	
 	public void removeItem(Item testItem) {
 		ItemList.remove(testItem);
-		NotifyDataChanged();
+		NotifyListener();
 	}
 	
 	public void removeArchivedItem(Item testItem) {
 		ArchivedItemList.remove(testItem);
-		NotifyDataChanged();
-	}
-	
-	public void NotifyDataChanged() {
-		for (Listener listener : getListeners()) {
-			listener.update();
-		}	
+		NotifyListener();
 	}
 	
 	public void addListener(Listener l) {
@@ -80,17 +74,17 @@ public class ItemList implements Serializable{
 			testItem.image = R.drawable.unchecked;
 		}
 		testItem.box = false;
-		NotifyDataChanged();
+		NotifyListener();
 	}
 
 	public void selectAll(Item testitem) {
 		testitem.box = true;
-		NotifyDataChanged();
+		NotifyListener();
 	}
 
 	public void selectNone(Item testitem) {
 		testitem.box = false;
-		NotifyDataChanged();
+		NotifyListener();
 	}
 
 	public void selectInverse(Item testitem) {
@@ -100,10 +94,18 @@ public class ItemList implements Serializable{
 		else{
 			testitem.box = true;
 		}
-		NotifyDataChanged();
+		NotifyListener();
 	}
 
 	public int getTotalArchivedNum() {
 		return ArchivedItemList.size();
+	}
+	
+	//get the following code from
+	//https://github.com/abramhindle/student-picker/blob/master/src/ca/softwareprocess/studentpicker/StudentList.java
+	public void NotifyListener() {
+		for (Listener listener : getListeners()) {
+			listener.update();
+		}	
 	}
 }
