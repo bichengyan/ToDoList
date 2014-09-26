@@ -22,17 +22,17 @@ public class ViewArchivedActivity extends Activity {
 		ItemListManager.initManager(this.getApplicationContext());
 		ListView listview = (ListView) findViewById(R.id.archivedItemListview);
 		Collection<Item> items = ItemListController.getArchivedItemList().getArchivedItems();
-		final ArrayList<Item> list = new ArrayList<Item>(items);
-		ItemAdapter = new ListAdapter(this, list);
+		final ArrayList<Item> archivedItemList = new ArrayList<Item>(items);
+		ItemAdapter = new ListAdapter(this, archivedItemList);
 		listview.setAdapter(ItemAdapter);
 		
 		//update observer
 		ItemListController.getArchivedItemList().addListener(new Listener() {		
 			@Override
 			public void update() {
-				list.clear();
+				archivedItemList.clear();
 				Collection<Item> items = ItemListController.getArchivedItemList().getArchivedItems();
-				list.addAll(items);
+				archivedItemList.addAll(items);
 				ItemAdapter.notifyDataSetChanged();
 			}
 		});
@@ -71,6 +71,7 @@ public class ViewArchivedActivity extends Activity {
 	    }
 	    
 	    if (emailBody != "Archived items are :"){
+	    	//got the following code from http://stackoverflow.com/questions/2197741/how-can-i-send-emails-from-my-android-application
 			Intent intent = new Intent(Intent.ACTION_SEND);
 			intent.setType("message/rfc822");
 			intent.putExtra(Intent.EXTRA_EMAIL  , new String[]{"recipient@example.com"});

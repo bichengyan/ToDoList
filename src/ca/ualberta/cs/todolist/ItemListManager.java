@@ -12,7 +12,8 @@ import android.content.SharedPreferences.Editor;
 import android.util.Base64;
 
 public class ItemListManager {
-	
+	//modified the following code based on 
+	//https://github.com/abramhindle/student-picker/blob/master/src/ca/softwareprocess/studentpicker/StudentListManager.java
 	static final String prefFile = "ItemListFile";
 	static final String ilKey = "itemList"; 
 	static final String prefFile2 = "ArchivedItemListFile";

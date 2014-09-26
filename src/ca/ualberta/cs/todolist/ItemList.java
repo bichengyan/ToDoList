@@ -16,8 +16,8 @@ public class ItemList implements Serializable{
 	
 	public ItemList() {
 		ItemList = new ArrayList<Item>();	
-		listeners = new ArrayList<Listener>();
 		ArchivedItemList = new ArrayList<Item>();
+		listeners = new ArrayList<Listener>();
 	}
 	
 	private ArrayList<Listener> getListeners() {
@@ -37,26 +37,26 @@ public class ItemList implements Serializable{
 	
 	public void addItem(Item testItem) {
 		ItemList.add(testItem);
-		NotifyListeners();
+		NotifyDataChanged();
 	}
 	
 	public void addArchivedItem(Item testItem) {
 		ArchivedItemList.add(testItem);
 		testItem.box = false;
-		NotifyListeners();
+		NotifyDataChanged();
 	}
 	
 	public void removeItem(Item testItem) {
 		ItemList.remove(testItem);
-		NotifyListeners();
+		NotifyDataChanged();
 	}
 	
 	public void removeArchivedItem(Item testItem) {
 		ArchivedItemList.remove(testItem);
-		NotifyListeners();
+		NotifyDataChanged();
 	}
 	
-	public void NotifyListeners() {
+	public void NotifyDataChanged() {
 		for (Listener listener : getListeners()) {
 			listener.update();
 		}	
@@ -80,17 +80,17 @@ public class ItemList implements Serializable{
 			testItem.image = R.drawable.unchecked;
 		}
 		testItem.box = false;
-		NotifyListeners();
+		NotifyDataChanged();
 	}
 
 	public void selectAll(Item testitem) {
 		testitem.box = true;
-		NotifyListeners();
+		NotifyDataChanged();
 	}
 
 	public void selectNone(Item testitem) {
 		testitem.box = false;
-		NotifyListeners();
+		NotifyDataChanged();
 	}
 
 	public void selectInverse(Item testitem) {
@@ -100,7 +100,7 @@ public class ItemList implements Serializable{
 		else{
 			testitem.box = true;
 		}
-		NotifyListeners();
+		NotifyDataChanged();
 	}
 
 	public int getTotalArchivedNum() {

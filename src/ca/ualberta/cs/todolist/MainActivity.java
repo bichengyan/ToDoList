@@ -42,17 +42,17 @@ public class MainActivity extends Activity {
 		ItemListManager.initManager(this.getApplicationContext());
 		ListView listview = (ListView) findViewById(R.id.todoItemListView);
 		Collection<Item> items = ItemListController.getItemList().getItems();
-		final ArrayList<Item> list = new ArrayList<Item>(items);
-		ItemAdapter = new ListAdapter(this, list);
+		final ArrayList<Item> itemList = new ArrayList<Item>(items);
+		ItemAdapter = new ListAdapter(this, itemList);
 		listview.setAdapter(ItemAdapter);
 
 		//update observer
 		ItemListController.getItemList().addListener(new Listener() {		
 			@Override
 			public void update() {
-				list.clear();
+				itemList.clear();
 				Collection<Item> items = ItemListController.getItemList().getItems();
-				list.addAll(items);
+				itemList.addAll(items);
 				ItemAdapter.notifyDataSetChanged();
 			}
 		});
@@ -116,13 +116,14 @@ public class MainActivity extends Activity {
 	    }
 	}
 	
+
 	public void finishItem(View v){
 		ItemListController ic = new ItemListController();
 	    for (Item i : ItemAdapter.getCheckedBox()) {
 	        ic.changeStatus(i);
 	    }
 	}
-	
+
 	public void removeItem(View v){
 		Toast.makeText(this, "Selected Items Removed", Toast.LENGTH_SHORT).show();
 		ItemListController ic = new ItemListController();
@@ -149,6 +150,7 @@ public class MainActivity extends Activity {
 	        emailBody += "\n" + i.getName();
 	    }
 	    if (emailBody != "Todo items are :"){
+	    	//get the following code from http://stackoverflow.com/questions/2197741/how-can-i-send-emails-from-my-android-application
 			Intent intent = new Intent(Intent.ACTION_SEND);
 			intent.setType("message/rfc822");
 			intent.putExtra(Intent.EXTRA_EMAIL  , new String[]{"recipient@example.com"});
