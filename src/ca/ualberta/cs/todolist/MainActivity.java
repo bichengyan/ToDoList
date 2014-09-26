@@ -86,6 +86,7 @@ public class MainActivity extends Activity {
 	    String emailBody = "";
 	    String emailtest = emailBody_todo + "\n\n" + emailBody_archived;
 	    
+	    //get all todo items
 	    for (Item i : ItemAdapter.getBox()) {
 	        emailBody_todo += "\n" + i.getName();
 	    }
@@ -94,12 +95,16 @@ public class MainActivity extends Activity {
 		ArrayList<Item> list_archived = new ArrayList<Item>(items_archived);
 		ItemAdapter = new ListAdapter(this, list_archived);
 		
+		//get all archived item
 	    for (Item i : ItemAdapter.getBox()) {
 		        emailBody_archived += "\n" + i.getName();
 		    }
 	    
+	    //add all item together
 	    emailBody = emailBody_todo + "\n\n" + emailBody_archived;
+	    
 	    if (!(emailBody.equals(emailtest))){
+	    	//get the following code from http://stackoverflow.com/questions/2197741/how-can-i-send-emails-from-my-android-application
 			Intent intent = new Intent(Intent.ACTION_SEND);
 			intent.setType("message/rfc822");
 			intent.putExtra(Intent.EXTRA_EMAIL  , new String[]{"recipient@example.com"});
